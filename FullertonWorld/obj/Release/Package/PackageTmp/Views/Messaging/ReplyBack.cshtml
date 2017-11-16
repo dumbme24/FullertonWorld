@@ -1,0 +1,85 @@
+﻿@model RegistrationLogin.Models.SecondUserReplyMessage
+
+
+@{
+    Layout = "~/Content/Shared/_LayoutDatabase.cshtml";
+}
+
+<p style="color:coral; text-align:center; font-family:Cambria; font-size:25px;">Reply</p>
+
+<hr style="border-top: 1px solid #d8b2b2;" />
+
+
+@using (Html.BeginForm("ReplyBack", "Messaging", FormMethod.Post))
+ {
+        @Html.ValidationSummary(true)
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+        <div class="display-field">
+            @Html.HiddenFor(model => model.MessageDetails.RequestID)
+        </div>
+
+        <div class="display-field">
+            @Html.HiddenFor(model => model.MessageDetails.MessageID)
+        </div>
+        <div class="display-label">
+            <h4 style="color:#0f5f7b; font-family:Cambria; font-size:20px;">@Html.DisplayNameFor(model => model.MessageDetails.MessageMail) </h4>
+        </div>
+        <div class="display-field">
+          <h4 style="color:#586061; font-family:Cambria; font-size:14px; padding-right:50px;"> @Html.DisplayFor(model => model.MessageDetails.MessageMail)</h4>
+        </div>
+
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+            @if (ViewBag.MessageReq != null)
+            {
+                <h4 style="color:green; font-family:Cambria; padding-bottom:10px; padding-left:20px;">@ViewBag.MessageReq</h4>
+            }
+
+                <div class="form-group">
+                <div class="col-md-10">
+            @Html.TextAreaFor(m => m.replyMessage.MessageBack, new { @class = "form-control", @Rows = "7", Type="text", required="required", @placeholder = "Your Message"})
+                    @Html.ValidationMessageFor(m => m.replyMessage.MessageBack)
+                </div>
+                </div>
+
+                @* Note Here We are passing  MessageDetails object properties (not replyMessage object properties)*@
+
+                <div class="form-group">
+                <div class="col-md-10">
+                    @Html.HiddenFor(m => m.MessageDetails.RequestID, new { @class = "form-control"})  
+                    @Html.ValidationMessageFor(m => m.replyMessage.RequestID)
+                </div>
+                </div>
+
+                <div class="form-group">
+                <div class="col-md-10">
+                    @Html.HiddenFor(m => m.MessageDetails.ToUserID, new { @class = "form-control"})
+                    @Html.ValidationMessageFor(m => m.MessageDetails.ToUserID)
+                </div>
+                 </div>
+
+                <div class="form-group">
+                <div class="col-md-10">
+                    @Html.HiddenFor(m => m.MessageDetails.FromUserID, new { @class = "form-control"})
+                    @Html.ValidationMessageFor(m => m.MessageDetails.FromUserID)
+                </div>
+                </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="submit" class="btn btn-inverse" value="Send Message" />
+                </div>            
+             </div>
+        </div>
+  </div>
+}
+
+<hr style="border-top: 1px solid #d8b2b2;" />
+<p>
+    @Html.ActionLink("Back to Inbox", "Inbox", "Messaging")
+</p>

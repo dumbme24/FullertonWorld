@@ -1,0 +1,55 @@
+﻿@model IEnumerable<RegistrationLogin.Models.OutboxViewModelDTO>
+
+<link href="~/Content/Shared/css/views.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "Outbox";
+    Layout = "~/Content/Shared/_LayoutDatabase.cshtml";
+}
+
+<h2>Oubox</h2>
+
+<div style="overflow-x:auto; overflow-y:auto;">
+<table>
+    <tr>
+        <th>
+         @Html.DisplayNameFor(model => model.FirstName) 
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+@*        <th>
+            @Html.DisplayNameFor(model => model.RequestID)
+        </th>  *@
+        <th>
+            @Html.DisplayNameFor(model => model.MessageMail)
+        </th>
+        <th>
+            @Html.DisplayName("Option")
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+
+ @*       <td>
+          @Html.DisplayFor(modelItem => item.RequestID)
+       @Html.ActionLink(@Html.DisplayFor(modelItem => item.RequestID).ToString(),"ContactRequester", "Database", new {id = item.RequestID},null)
+        </td> *@
+        <td>
+            @Html.DisplayFor(modelItem => item.MessageMail)
+        </td>
+        <td>
+            None
+@*            @Html.ActionLink("Delete", "DeleteOutBoxMessage", new { id=item.MessageID })  *@
+        </td>
+    </tr>
+}
+</table>
+</div>

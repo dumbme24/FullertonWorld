@@ -1,0 +1,91 @@
+﻿@using RegistrationLogin.Models;
+@model RegistrationLogin.Models.EmailForm
+
+@* @model RegistrationLogin.Models.EmailForm *@
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+ @if (Session["UserId"] != null)
+ {
+         Layout = "~/Content/Shared/_LayoutMain.cshtml";
+ }
+  else
+  {
+         Layout = "~/Content/Shared/_LayoutMain_logout.cshtml";
+  }
+
+
+
+@* @section UserLoggedIn
+{
+    @Html.ValidationSummary(true)
+
+     @if (Session["UserId"] != null)
+    {
+        <h4 class="userName">Hello @Session["FirstName"].ToString() !</h4> 
+    }   
+}
+*@
+
+@* @section UserProfile
+{
+         @if (Session["UserId"] != null)
+    {
+
+   }
+} *@
+
+
+@*
+@section UserLogout
+{
+         @if (Session["UserId"] != null)
+   {
+       <p class="userName"> @Html.ActionLink("Logout", "Logout", "Account")</p>
+   }
+}
+*@
+
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    if (ViewBag.MessageSent != null)
+    {
+         <h4 style="color:green">@ViewBag.Message</h4>
+    }
+
+            
+    @Html.AntiForgeryToken()
+
+        <div class="form-group">
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FromName, new { @class = "form-control", required = "required", @placeholder = "Your Name" })
+            @Html.ValidationMessageFor(m => m.FromName)
+        </div>
+    </div>
+    <div class="form-group">
+
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control", required = "required",@placeholder = "Your Email"})
+            @Html.ValidationMessageFor(m => m.FromEmail)
+        </div>
+
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.TextAreaFor(m => m.Message, new { @class = "form-control", @Rows = "6", Type="text", required="required", @placeholder = "Message"})
+            @Html.ValidationMessageFor(m => m.Message)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10">
+            <input type="submit" class="btn btn-inverse" value="Send" />
+        </div>
+    </div>
+    
+}

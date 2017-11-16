@@ -1,0 +1,35 @@
+﻿body {
+   overflow: auto;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+
+h4 {
+    color: #0f5f7b;
+    font-family: Cambria;
+    font-size: 20px;
+}
+
+h3 {
+    color:#586061; 
+    font-family:Cambria; 
+    font-size:14px;    
+}
+
+h2 {
+    color:coral; 
+    font-family:Cambria; 
+    font-size:28px; 
+    padding-bottom:10px;
+}
+
+hr {
+    border-top: 1px solid #d8b2b2;
+}
+
+.requestDetails {
+    padding:0px 130px 0px 30px;
+}

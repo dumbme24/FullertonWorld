@@ -1,0 +1,74 @@
+﻿@model IEnumerable<RegistrationLogin.Models.BuySellDatabase>
+
+<link href="~/Content/Shared/css/views.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "UserRequestsForBuySell";
+    Layout = "~/Content/Shared/_LayoutDatabase.cshtml";
+}
+
+<h2>Your Requests For Buy & Sell</h2>
+
+<div style="overflow-x: auto; overflow-y: auto;">
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuyOrSell)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MessageMail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Requested_Date)
+            </th>
+            <th>
+                @Html.DisplayName("Options")
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BuyOrSell)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MessageMail)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Requested_Date)
+                </td>
+
+                @Html.HiddenFor(modelItem => item.UserID)
+
+                <td>
+                    <button type="button" class="btn btn-info btn-xs"  onclick="location.href='@Url.Action("EditSellBuyRequest", "Database", new { id = item.ID })'">Edit</button>
+
+                    <button type="button" class="btn btn-info btn-xs"  onclick="location.href='@Url.Action("RequestBuySellDetails", "Database", new { id = item.ID })'">Details</button>
+
+                    <button type="button" class="btn btn-info btn-xs"  onclick="location.href='@Url.Action("DeleteBuySellRequest", "Database", new { id = item.ID })'">Delete</button>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+

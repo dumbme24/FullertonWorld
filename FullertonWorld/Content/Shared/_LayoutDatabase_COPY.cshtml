@@ -1,0 +1,114 @@
+﻿@using RegistrationLogin.Models;
+@using System.Web.Mvc.Html;
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Fullerton Life | Database</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="~/Content/Shared/css/index.css" />
+    <link rel="stylesheet" href="~/Content/Shared/css/index_responsive.css" />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+    
+<body>
+
+    <div class="navbar navbar-fixed-top navbar-custom">
+        <div class="container">
+
+            <div class="navbar-header">
+
+                <a href="#" class="pull-left">
+                    <img src="~/Content/Shared/images/xpl1.png"></a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Home</a>
+                    </li>
+                    <li><a href="#column1">About</a>
+                    </li>
+                    <li><a href="#contact">Contact</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Profile <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Edit Profile</a></li>
+                            <li><a href="#">Contacts</a></li>
+                            <li><a href="#">Settings</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="postRequest">
+                <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body panel-custom">
+                                <img class="roommate" src="~/Content/Shared/images/Column/roommates3.png">
+
+                                <h5>If you are looking for a roommate or any replacement at your place </br> then you can see the available requets in a database below or can raise a new request for you!</h5>        
+                                <a  href="../Database/RoomateRequest" class="button">Post a New Request</a>
+                                <a  href="../Database/RoomateDatabaseGrid" class="button">View Current Requests</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+
+
+    <div class="email-area">
+        <div class="signup-page">
+            <div class="signup-form">
+                <div class="container .center_div">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            @RenderBody()
+                        </div>
+                        <div class="col-sm-6">
+                        </div>
+                    </div>
+                </div>
+               </div>
+            </div>
+        </div>
+
+</body>
+</html>
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+https://gist.github.com/atejeda/21c0e0243a745299815b

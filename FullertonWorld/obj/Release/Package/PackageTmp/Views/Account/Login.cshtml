@@ -1,0 +1,63 @@
+﻿@model RegistrationLogin.Models.UserLogin
+
+@{
+    Layout = "~/Content/Shared/_LayoutRegistration.cshtml";
+}
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+@*
+
+ @section registrationHeader {
+ <div>
+         @Html.ActionLink("Sign Up", "Register", new { id = 1}, //   Route args if needed; null if not.
+            new {
+                @style="color:#FFFFFF;text-decoration:none; background-color: #000; border: none; border-radius: 7px;color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; cursor: pointer; margin-top: -10px; "})
+
+</div>
+ }
+
+*@
+
+   <h3>Login </h3>                           
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    
+     <hr />
+
+    if (ViewBag.LoginMessage != null)
+    {
+        <h3 style="color:red" >@ViewBag.LoginMessage </h3>
+    <br />
+    }
+    
+    
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.userEmail, new { @placeholder = "Email", autofocus="autofocus" })
+        @Html.ValidationMessageFor(model => model.userEmail)
+    </div>
+
+    <div class="editor-field">
+        @Html.PasswordFor(model => model.userPassword, new { @placeholder = "Password" })
+        @Html.ValidationMessageFor(model => model.userPassword)
+    </div>
+    
+    <div class="editor-field">
+        @Html.HiddenFor(model => model.LastLoginTime, new { @Value = System.DateTime.Now })
+    </div>
+    <p>
+        <input type="submit" value="Login" />
+    </p>
+    
+    <div>
+        @Html.ActionLink("Forgot password?", "ForgotPassword")
+    </div>
+
+}
+

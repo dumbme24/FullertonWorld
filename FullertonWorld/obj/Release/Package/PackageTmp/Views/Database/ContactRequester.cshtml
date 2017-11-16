@@ -1,0 +1,108 @@
+﻿@model RegistrationLogin.Models.SecondUserSendMessage
+
+<link href="~/Content/Shared/css/views.css" rel="stylesheet" />
+
+@{
+    Layout = "~/Content/Shared/_LayoutDatabase.cshtml";
+}
+
+<h2>Contact Requester</h2>
+
+                       <button type="button" class="btn btn-info btn-xs"  onclick="location.href='@Url.Action("RoomateDatabaseGrid", "Database")'">Back to Available Requests</button>
+
+
+@using (Html.BeginForm("ContactRequester", "Database", FormMethod.Post))
+ {
+        @Html.ValidationSummary(true)
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+        <div class="display-label">
+            <h4>@Html.DisplayNameFor(model => model.roommateDB.Name)</h4>
+        </div>
+        <div class="display-field">
+      <h3> @Html.DisplayFor(model => model.roommateDB.Name) </h3>
+        </div> 
+
+        <div class="display-label">
+            <h4>@Html.DisplayNameFor(model => model.roommateDB.SelectOptionForPartner) </h4>
+        </div>
+        <div class="display-field">
+          <h3>  @Html.DisplayFor(model => model.roommateDB.SelectOptionForPartner) </h3>
+        </div>
+        <div class="display-label">
+            <h4>@Html.DisplayNameFor(model => model.roommateDB.PartnerGender) </h4>
+        </div>
+        <div class="display-field">
+        <h3>   @Html.DisplayFor(model => model.roommateDB.PartnerGender) </h3> 
+        </div>
+
+        <div class="display-label">
+            <h4>@Html.DisplayNameFor(model => model.roommateDB.Location)</h4>
+        </div>
+        <div class="display-field">
+        <h3>   @Html.DisplayFor(model => model.roommateDB.Location) </h3> 
+        </div>
+
+        <div class="display-label">
+            <h4>@Html.DisplayNameFor(model => model.roommateDB.Requested_Date) </h4>
+        </div>
+        <div class="display-field">
+         <h3>   @Html.DisplayFor(model => model.roommateDB.Requested_Date) </h3>
+        </div>
+
+
+         @Html.HiddenFor(model => model.roommateDB.ID)
+         @Html.HiddenFor(model => model.roommateDB.UserID)
+
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+          <div class="display-label">
+            <h4>@Html.DisplayNameFor(model => model.roommateDB.MessageMail) </h4>
+        </div>
+
+        <div class="display-field">
+        <h3>   @Html.DisplayFor(m => m.roommateDB.MessageMail) </h3>
+        </div>
+        <br />
+
+        @if (ViewBag.MessageReq != null)
+            {
+            <h4 style="font-family:Cambria; color:green;font-size:18px; padding-left:20px;">@ViewBag.MessageReq</h4>
+            }
+
+            <div class="form-group">
+                <div class="col-md-10">
+                     @Html.TextAreaFor(m => m.sendMessage.MessageToRequester, new { @class = "form-control", @Rows = "6", Type="text", required="required", @placeholder = "Your Message"})
+                    @Html.ValidationMessageFor(m => m.sendMessage.MessageToRequester)
+                </div>
+                </div>
+                <div class="form-group">
+                <div class="col-md-10">
+                    @Html.HiddenFor(m => m.roommateDB.UserID, new { @class = "form-control"})
+                    @Html.ValidationMessageFor(m => m.sendMessage.MessageToRequester)
+                </div>
+                </div>
+
+                <div class="form-group">
+                <div class="col-md-10">
+                    @Html.HiddenFor(m => m.roommateDB.ID, new { @class = "form-control"})
+                    @Html.ValidationMessageFor(m => m.sendMessage.MessageToRequester)
+                </div>
+                 </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="submit" class="btn btn-inverse" value="Send Message" />
+                </div>            
+             </div>
+</div>
+  </div>
+}
+
+<hr />
+<p>
+    @Html.ActionLink("Back to Available Requests", "RoomateDatabaseGrid")
+</p>

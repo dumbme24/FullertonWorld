@@ -1,0 +1,55 @@
+﻿@model RegistrationLogin.Models.UserAccount
+
+@{
+    Layout = "~/Content/Shared/_LayoutEditProfile.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "EditUserProfile";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+ <h2 style= "font-family:Cambria; color:coral; padding-bottom:10px; text-align:center;" >My Profile</h2>
+        
+    if (ViewBag.SavedMessage != null)
+    {
+    <h4 style= "font-family:sans-serif; color:green; padding-bottom:10px; text-align:center">@ViewBag.SavedMessage</h4>
+    }
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+
+            @Html.HiddenFor(model => model.UserId)
+
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.FirstName, new { @required = "required", @placeholder = "First Name" })
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
+
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.LastName, new { @required = "required", @placeholder = "Last Name" })
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+
+            <div class="editor-field">
+                @Html.HiddenFor(model => model.Email, new { @placeholder = "Email" })
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+
+
+            <div class="editor-field">
+                @Html.HiddenFor(model => model.CreatedDate, new { @Value = System.DateTime.Now })
+            </div>
+
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </div>
+    </div>
+}
+

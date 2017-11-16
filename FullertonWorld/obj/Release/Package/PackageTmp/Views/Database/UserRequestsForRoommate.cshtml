@@ -1,0 +1,74 @@
+﻿@model IEnumerable<RegistrationLogin.Models.RoommateDatabase>
+
+<link href="~/Content/Shared/css/views.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "UserRequestsForRoommate";
+}
+
+@{
+    Layout = "~/Content/Shared/_LayoutDatabase.cshtml";
+}
+
+<h2>Your Roommate Finder Requests</h2>
+
+<div style="overflow-x:auto; overflow-y:auto;">
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectOptionForPartner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PartnerGender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MessageMail)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Requested_Date)
+        </th>
+        <th>
+            @Html.DisplayName("Options")
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SelectOptionForPartner)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PartnerGender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MessageMail)
+        </td>        
+        <td>
+            @Html.DisplayFor(modelItem => item.Requested_Date)
+        </td>
+        <td>
+                                    <button type="button" class="btn btn-info btn-xs"  onclick="location.href='@Url.Action("EditRequest", "Database", new { id = item.ID })'">Edit</button>
+
+                                    <button type="button" class="btn btn-info btn-xs"  onclick="location.href='@Url.Action("RequestDetails", "Database", new { id = item.ID })'">Details</button>
+
+                                    <button type="button" class="btn btn-info btn-xs"  onclick="location.href='@Url.Action("DeleteRequest", "Database", new { id = item.ID})'">Delete</button>
+
+        </td>
+    </tr>
+}
+
+</table>
+</div>

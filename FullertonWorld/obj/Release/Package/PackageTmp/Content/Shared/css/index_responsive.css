@@ -1,0 +1,410 @@
+
+
+/* Responsive CSS for Login Page */
+
+
+@media screen and (max-width:840px)
+{
+    
+    #section3 h1, #section2 h1, #section4 h1 
+{
+    line-height:40px;
+    font-size:35px;
+    padding-bottom:30px;
+    font-weight:600;
+}
+
+
+        .sidebar-left
+        {
+            width: 40%;
+            float: left;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 20px 25px 30px 25px;
+            box-sizing: border-box;
+            margin-left: 30px;
+            background-color: rgba(13,61,78, 0.6);
+        }
+    
+            .sidebar-left p
+        {
+
+            padding-bottom: 16px;
+            padding-right: 15px;
+            padding-left: 15px;
+            font-family: Helvetica, sans-serif;
+            font-size: 18px;
+            color: aliceblue;
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+            text-align: center;
+            
+        }
+
+
+        .main-area
+        {
+            width: 50%;
+            float: right;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 0;
+            padding: 5px 5px 5px 5px;
+            box-sizing: border-box;   
+
+        }
+
+            header
+        {
+            padding-top: 5px;
+            padding-bottom: 15px;
+            font-size: 100%;
+            font: inherit;    
+        }
+
+        header h1
+        {
+            font-size: 1.7em;
+            margin-left: 70px;
+            padding: 12px 10px 5px 0px;
+        }
+    
+        .signup-page form input[type="email"],
+        .signup-page form input[type="password"],
+        .signup-page form input[type="text"],
+        .signup-page form input[type="number"],
+        .signup-page form input[type="tel"],
+        .signup-page form select
+        {
+            width: 100%;
+            display: block;
+            box-sizing: border-box;
+            padding: 0 10px;
+            height: 30px;
+            font-family: Tahoma, sans-serif;
+            font-size: 100%;
+            margin-bottom: 15px;
+            border: 1px solid #CDCDCD;
+            outline: none; /* To remove bydefault blue focus color of text and button outline*/
+        }
+
+.carousel-content a{
+  z-index: 20;
+  color: #d5d6a5;
+  font-size:38px;
+  font-family: Cambria;
+  text-shadow: 0 6px 6px rgba(0,0,0,.6);
+  text-decoration:none;
+ }
+
+.carousel-content a:hover{
+  color: white;
+  text-decoration:none;
+}
+
+
+
+.carousel-content p{
+  display:block;
+  width:300px;
+  position: absolute;
+  bottom: 40%;
+  left: 14%;
+  z-index: 20;
+  color: white;
+  font-size:30px;
+  font-family:Cambria;
+  text-shadow: 0 3px 4px rgba(0,0,0,.6);
+  padding-bottom:10px;
+}
+
+.carousel-content h4{
+
+  font-style:italic;
+  display:block;
+  width:300px;
+  position: absolute;
+  bottom: 35%;
+  left: 33%;
+  z-index: 20;
+  color: white;
+  font-size:19px;
+  font-family:Cambria;
+  text-shadow: 0 3px 4px rgba(0,0,0,.6);
+}
+
+
+}
+
+@media screen and (max-width:760px)
+{
+    .hide-small
+    {
+        display: none;
+    }
+
+    #section3 h1, #section2 h1, #section4 h1 
+{
+    line-height:40px;
+    font-size:35px;
+    padding-bottom:40px;
+    font-weight:600;
+}
+
+    .navbar-custom .navbar-nav > li > a 
+{
+    line-height:25px;
+    text-shadow:0px 0px 0px #000;
+}
+
+
+    .main-area,
+    .sidebar-left
+    {
+        margin-top: 30px;
+        margin-left: 140px;
+        width: 62%;
+        float: none;
+    }
+    
+    .main-area
+    {
+        
+        margin-top: 10px;   
+    }
+       header h1
+        {
+            font-size: 1.7em;
+            margin-left: 30px;
+            padding: 12px 10px 5px 0px;
+        }
+
+
+}
+
+@media screen and (max-width:700px)
+{
+        
+    .hide-small
+    {
+        display: none;
+    }
+       
+    .sidebar-left
+    {
+        width: 0%;
+    }
+    .main-area
+    {
+        
+        width: 80%;
+        float: none;        
+        margin: 0 auto;
+        padding-left: 0 auto;
+        padding-right:  0 auto;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    
+        header
+      {
+        height:120px;
+     }
+
+    
+     header h1
+      {
+        vertical-align: middle;
+          font-size: 1.8em;
+        float: none;        
+        margin: 0 auto;
+        padding-left: 0 auto;
+        padding-right:  0 auto;
+
+      }
+    
+        .login-page form
+        {
+                float: right;
+                margin-top: 0px;
+                padding: 0;
+                vertical-align: middle;
+        }
+
+
+.carousel-content a{
+  z-index: 20;
+  color: #d5d6a5;
+  font-size:32px;
+  font-family: Cambria;
+  text-shadow: 0 6px 6px rgba(0,0,0,.6);
+  text-decoration:none;
+ }
+
+.carousel-content a:hover{
+  color: white;
+  text-decoration:none;
+}
+
+.carousel-content p{
+  display:block;
+  width:270px;
+  position: absolute;
+  bottom: 40%;
+  left: 14%;
+  z-index: 20;
+  color: white;
+  font-size:28px;
+  font-family:Cambria;
+  text-shadow: 0 3px 4px rgba(0,0,0,.6);
+  padding-bottom:10px;
+}
+
+.carousel-content h4{
+
+  font-style:italic;
+  display:block;
+  width:300px;
+  position: absolute;
+  bottom: 35%;
+  left: 33%;
+  z-index: 20;
+  color: white;
+  font-size:16px;
+  font-family:Cambria;
+  text-shadow: 0 3px 4px rgba(0,0,0,.6);
+}
+
+
+ }
+
+@media screen and (max-width:490px)
+{    
+    
+        .main-area
+    {        
+        width: 100%;
+    }
+    
+        .login-page form input[type="email"],
+        .login-page form input[type="password"]
+        {
+            height: 16px;
+            width: 120px;
+        }
+
+        .login-page form a
+    {
+        margin-left: 36px;
+    }
+
+
+.carousel-content a{
+  z-index: 20;
+  color: #d5d6a5;
+  font-size:25px;
+  font-family: Cambria;
+  text-shadow: 0 6px 6px rgba(0,0,0,.6);
+  text-decoration:none;
+ }
+
+.carousel-content a:hover{
+  color: white;
+  text-decoration:none;
+}
+
+
+
+.carousel-content p{
+  display:block;
+  width:270px;
+  position: absolute;
+  bottom: 40%;
+  left: 14%;
+  z-index: 20;
+  color: white;
+  font-size:23px;
+  font-family:Cambria;
+  text-shadow: 0 3px 4px rgba(0,0,0,.6);
+  padding-bottom:10px;
+}
+
+.carousel-content h4{
+
+  font-style:italic;
+  display:block;
+  width:300px;
+  position: absolute;
+  bottom: 35%;
+  left: 33%;
+  z-index: 20;
+  color: white;
+  font-size:16px;
+  font-family:Cambria;
+  text-shadow: 0 3px 4px rgba(0,0,0,.6);
+}
+
+    
+ }
+
+@media screen and (max-width:410px)
+{    
+    
+        .login-page form input[type="email"],
+        .login-page form input[type="password"]
+        {
+            height: 16px;
+            width: 100px;
+        }
+
+        .login-page form a
+        {
+            margin-left: 16px;
+        }
+    
+    .main-area
+    {        
+        width: 100%;
+    }
+    
+ }
+
+@media screen and (max-width:365px)
+{    
+    
+        .login-page form input[type="email"],
+        .login-page form input[type="password"]
+        {
+            height: 12px;
+            width: 80px;
+        }
+
+        .login-page form a
+        {
+            margin-left: 5px;
+        }
+    
+    .main-area
+    {        
+        width: 100%;
+        float: none;
+
+    }
+    
+    .signup-background
+    {
+        background-image: url(../images/banner_main.jpg);
+        background-position: center;
+        background-size: cover;
+        transform: scale(1);
+    }
+
+    .navbar-custom .navbar-nav > li > a 
+{
+    line-height:25px;
+    text-shadow:0px 0px 0px #000;
+}
+
+ }
+

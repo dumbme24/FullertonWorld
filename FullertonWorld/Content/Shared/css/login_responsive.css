@@ -1,0 +1,226 @@
+
+
+/* Responsive CSS for Login Page */
+
+
+@media screen and (max-width:840px)
+{
+    .navbar-custom .navbar-nav > li > a 
+{
+    line-height:25px;
+    text-shadow:0px 0px 0px #000;
+}
+
+    
+        .sidebar-left
+        {
+        }
+    
+            .sidebar-left p
+        {
+
+            padding-bottom: 16px;
+            padding-right: 15px;
+            padding-left: 15px;
+            font-family: Helvetica, sans-serif;
+            font-size: 18px;
+            color: aliceblue;
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+            text-align: center;
+            
+        }
+
+
+        .main-area
+        {
+            width: 50%;
+            float: right;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 0;
+            padding: 5px 5px 5px 5px;
+            box-sizing: border-box;   
+
+        }
+
+            header
+        {
+            padding-top: 5px;
+            padding-bottom: 15px;
+            font-size: 100%;
+            font: inherit;    
+        }
+
+        header h1
+        {
+            font-size: 1.7em;
+            margin-left: 70px;
+            padding: 12px 10px 5px 0px;
+        }
+    
+
+}
+
+@media screen and (max-width:750px)
+{
+
+        .hide-small
+    {
+        display: none;
+    }
+
+.navbar-custom .navbar-nav > li > a 
+{
+    line-height:25px;
+    text-shadow:0px 0px 0px #000;
+}
+
+
+
+    .main-area,
+    .sidebar-left
+    {
+        margin-top: 30px;
+        margin-left: 140px;
+        width: 62%;
+        float: none;
+    }
+    
+    .main-area
+    {
+        
+        margin-top: 10px;   
+    }
+       header h1
+        {
+            font-size: 1.7em;
+            margin-left: 30px;
+            padding: 12px 10px 5px 0px;
+        }
+}
+
+@media screen and (max-width:700px)
+{    
+    .hide-small
+    {
+        display: none;
+    }
+       
+    .sidebar-left
+    {
+        width: 0%;
+    }
+    .main-area
+    {
+        
+        width: 80%;
+        float: none;        
+        margin: 0 auto;
+        padding-left: 0 auto;
+        padding-right:  0 auto;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    
+        header
+      {
+        height:120px;
+     }
+
+    
+     header h1
+      {
+        vertical-align: middle;
+          font-size: 1.8em;
+        float: none;        
+        margin: 0 auto;
+        padding-left: 0 auto;
+        padding-right:  0 auto;
+
+      }
+    
+        .login-page form
+        {
+                float: right;
+                margin-top: 0px;
+                padding: 0;
+                vertical-align: middle;
+        }
+ }
+
+@media screen and (max-width:490px)
+{    
+    
+        .main-area
+    {        
+        width: 100%;
+    }
+    
+        .login-page form input[type="email"],
+        .login-page form input[type="password"]
+        {
+            height: 16px;
+            width: 120px;
+        }
+
+        .login-page form a
+    {
+        margin-left: 36px;
+    }
+    
+ }
+
+@media screen and (max-width:410px)
+{    
+    
+        .login-page form input[type="email"],
+        .login-page form input[type="password"]
+        {
+            height: 16px;
+            width: 100px;
+        }
+
+        .login-page form a
+        {
+            margin-left: 16px;
+        }
+    
+    .main-area
+    {        
+        width: 100%;
+    }
+    
+ }
+
+@media screen and (max-width:365px)
+{    
+    
+        .login-page form input[type="email"],
+        .login-page form input[type="password"]
+        {
+            height: 12px;
+            width: 80px;
+        }
+
+        .login-page form a
+        {
+            margin-left: 5px;
+        }
+    
+    .main-area
+    {        
+        width: 100%;
+        float: none;
+
+    }
+    
+    .signup-background
+    {
+        background-image: url(../images/banner_main.jpg);
+        background-position: center;
+        background-size: cover;
+        transform: scale(1);
+    }
+ }
+

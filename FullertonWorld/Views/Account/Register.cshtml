@@ -1,0 +1,76 @@
+﻿@model RegistrationLogin.Models.UserAccount
+
+@{
+    Layout = "~/Content/Shared/_LayoutRegistration.cshtml";
+}
+
+@{
+    ViewBag.Title = "Register";
+}
+
+
+@*
+
+ @section LoginHeader {
+ <div>
+         @Html.ActionLink("Sign In", "Login", new { id = 1}, //   Route args if needed; null if not.
+            new {@style="color:#FFFFFF;text-decoration:none; background-color: #000; border: none; border-radius: 7px;color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; cursor: pointer; margin-top: -10px; "})
+     </h3>
+</div>
+     }     
+
+*@
+
+   <h3>Sign up - It's free.</h3>            
+
+
+@using (Html.BeginForm())
+{
+    
+    @Html.ValidationSummary(true)
+
+    if (ViewBag.Message != null)
+    {
+    <h4 style="color:coral">@ViewBag.Message</h4>
+    }
+    
+     
+@*     <p>@TempData["notice"]</p> *@
+    
+    <hr />
+    
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.FirstName, new { @placeholder = "First Name", autofocus="autofocus" })
+        @Html.ValidationMessageFor(model => model.FirstName)
+    </div>
+
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.LastName, new { @placeholder = "Last Name" })
+        @Html.ValidationMessageFor(model => model.LastName)
+    </div>
+
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Email, new { @placeholder = "Email" })
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+
+    <div class="editor-field">
+        @Html.PasswordFor(model => model.Password, new { @placeholder = "Password" })
+        @Html.ValidationMessageFor(model => model.Password)
+    </div>
+
+    <div class="editor-field">
+        @Html.PasswordFor(model => model.ConfirmPassword, new { @placeholder = "Confirm Password" })
+        @Html.ValidationMessageFor(model => model.ConfirmPassword)
+    </div>
+    
+    <div class="editor-field">
+        @Html.HiddenFor(model => model.CreatedDate, new { @Value = System.DateTime.Now })
+    </div>
+         
+    <p>
+        <input type="submit" value="Sign Up" />
+    </p>       
+}
+
+

@@ -1,0 +1,97 @@
+﻿@model RegistrationLogin.Models.BuySellDatabase
+
+<link href="~/Content/Shared/css/views.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "BuySellRequest";
+    Layout = "~/Content/Shared/_LayoutDatabase.cshtml";
+}
+
+<h2 style="font-family: Cambria; color: coral; padding-bottom: 10px; padding-left: 35px; font-size: 28px;">Buy or Sell Request</h2>
+
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="reuestForm">
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <img class="roommateReq" src="~/Content/Shared/images/Column/sale2.png">
+
+                    <h5>1. Fill out some basic information and post a new request for buy and sell.</h5>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <img class="roommateReq" src="~/Content/Shared/images/Column/inbox.png">
+                    <h5>2. People interested in your request may contact you. Check your inbox timely.</h5>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <img class="roommateReq" src="~/Content/Shared/images/Column/salebuy.png">
+                    <h5>3.We wish you a happy trading.</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="reuestForm">
+
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+
+       <p style= "font-family:sans-serif; color:green; margin-top:-10px; font-size:18px; " >@ViewBag.MessageReq</p>
+                
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", required = "required", @placeholder = "Your Name or Nickname" })
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+                
+                <div class="editor-field">
+                        @Html.DropDownList("BuyOrSell", new List<SelectListItem>
+                            {
+                                new SelectListItem {Text= "Sell", Value="Sell"},
+                                new SelectListItem {Text= "Buy", Value="Buy"},
+                                new SelectListItem {Text= "Other", Value="Other"}
+                            }, "Select the choice", new { @class = "form-control", required = "required", @placeholder = "Enter the valid option"})
+                    @Html.ValidationMessageFor(model => model.BuyOrSell)
+                </div>
+
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Item, new { @class = "form-control", required = "required", @placeholder = "Item" })
+                    @Html.ValidationMessageFor(model => model.Item)
+                </div>
+
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Price, new { @class = "form-control", required = "required", @placeholder = "Price or Budget" })
+                    @Html.ValidationMessageFor(model => model.Price)
+                </div>
+
+                <div class="editor-field">
+                    @Html.TextAreaFor(model => model.MessageMail, new { @class = "form-control", column="7", rows="6", required = "required", @placeholder = "Your Message" })
+                    @Html.ValidationMessageFor(model => model.MessageMail)
+                </div>
+                
+                <div class="editor-field">
+                    @Html.HiddenFor(model => model.Requested_Date, new { @Value = System.DateTime.Now })
+                </div>
+
+                <div class="editor-field">
+                    @Html.HiddenFor(model => model.UserID)
+                </div>
+
+                <p>
+                    <input type="submit" value="Post" />
+                </p>
+            }
+
+            <div>
+                @Html.ActionLink("Back to Available Requests", "sellbuygrid", "Database")
+            </div>
+        </div>
+    </div>
+</div>

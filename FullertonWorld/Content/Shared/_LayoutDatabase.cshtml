@@ -1,0 +1,125 @@
+﻿@using RegistrationLogin.Models;
+@using System.Web.Mvc.Html;
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Fullerton Life | Database</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="~/Content/Shared/css/index.css" />
+    <link rel="stylesheet" href="~/Content/Shared/css/index_responsive.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="~/Content/Shared/css/sidebar.css" />
+</head>
+<body>
+
+    <div class="navbar navbar-fixed-top  navbar-custom">
+        <div class="container">
+
+            <div class="navbar-header">
+
+                <a href="#" class="pull-left">
+                    <img src="~/Content/Shared/images/xpl.png"></a>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="~/Main/Index">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="login_class" href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> My Profile <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Account/EditUserProfile">Edit Profile</a></li>
+                            <li><a href="~/Database/Index">My Panel</a></li>
+                            <li><a href="~/Database/UserRequestsForRoommate">My Requests</a></li>
+                            <li><a href="~/Messaging/Inbox">Inbox</a></li>
+                            <li><a href="~/Messaging/Outbox">Outbox</a></li>
+                            <li><a href="~/Account/Logout">Logout</a></li>
+                        </ul>
+                    </li>
+                   </ul>
+            </div>
+        </div>
+    </div>
+    </br>
+    </br>
+    </br>
+    </br>
+   <div id="wrapper">
+       <div id="sidebar-wrapper">
+           <ul class="sidebar-nav">
+               </br></br></br>
+             <li><a onclick="changecolor(this);" href="~/Database/Index" class=""><span class="glyphicon glyphicon-home"></span> &nbsp;&nbsp; My Panel</a></li>
+
+               <li><a onclick="changecolor(this);" href="~/Database/RoomateRequest" class=""><span class="glyphicon glyphicon-user"></span> &nbsp;&nbsp; Roommate Finder Request</a></li>
+               <li><a onclick="changecolor(this);" href="~/Database/BuySellRequest" class=""><span class="glyphicon glyphicon-shopping-cart"></span> &nbsp;&nbsp; Buy & Sell Request</a></li>
+
+               <li><a onclick="changecolor(this);" href="~/Database/RoomateDatabaseGrid" class=""><span class="glyphicon glyphicon-th"></span> &nbsp;&nbsp; Roommate Finder Database</a></li>
+               <li><a onclick="changecolor(this);" href="~/Database/sellbuygrid" class=""><span class="glyphicon glyphicon-th"></span> &nbsp;&nbsp; Buy & Sell Database</a></li>
+
+               <li><a onclick="changecolor(this);" href="~/Database/UserRequestsForRoommate" class=""><span class="glyphicon glyphicon-th-large"></span> &nbsp;&nbsp; My Requests for Roommate</a></li>
+               <li><a onclick="changecolor(this);" href="~/Database/UserRequestsForBuySell" class=""><span class="glyphicon glyphicon-th-large"></span> &nbsp;&nbsp; My Requests for Buy & Sell</a></li>
+               <li><a onclick="changecolor(this);" href="~/Messaging/Inbox" class=""> <span class="glyphicon glyphicon-envelope"></span> &nbsp;&nbsp; Inbox</a></li>
+               <li><a onclick="changecolor(this);" href="~/Messaging/Outbox" class=""> <span class="glyphicon glyphicon-envelope"></span> &nbsp;&nbsp; Outbox</a></li>
+
+           </ul>
+       </div>
+
+       <!-- Page content -->
+       <div id="page-content-wrapper clearfix">
+           <div class="row">
+               <div class="col-lg-12">
+                   <div class="container">
+                       <br />
+                       <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+
+                   </div>
+                   <div class="email-area">
+                       <div class="signup-page ">
+                           <div class="signup-form">
+                               <div class="row">
+                                   @RenderBody()
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+
+    <footer class=" footer group">
+        <p>FULLERTONXPLORER &copy; 2016 </p>
+    </footer>
+
+    <!-- Menu toggle script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+
+        });
+    </script>
+
+
+</body>
+</html>

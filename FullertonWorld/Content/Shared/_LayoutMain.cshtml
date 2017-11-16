@@ -1,0 +1,253 @@
+@using RegistrationLogin.Models;
+@using System.Web.Mvc.Html;
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Fullerton World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="~/Content/Shared/css/index.css" />
+    <link rel="stylesheet" href="~/Content/Shared/css/index_responsive.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script>
+        var shiftWindow = function () { scrollBy(0, -55) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+     </script>
+
+    <!--
+        var shiftWindow = function() { scrollBy(0, -50) };
+        if (location.hash) shiftWindow();
+        window.addEventListener("hashchange", shiftWindow);
+         -->
+
+</head>
+
+<body onload="load()">
+
+    <div id="section1">
+
+    <div class="block">
+                    <br/><br/><br/><br/>
+
+    <div id="myCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="active item">
+                <img src="~/Content/Shared/images/BG_Slider/1_Mod.jpg" alt="Slide1" />
+                <div class="carousel-content">
+                  <p>&ldquo; <a href="#section1">FULLERTON</a> - The place you will fall in love with. &rdquo;</p>
+                    <h4>- fullerton townsfolk</h4>
+                  </div>
+            </div>
+            <div class="item">
+                <img src="~/Content/Shared/images/BG_Slider/1_Mod.jpg" alt="Slide2" />
+            </div>
+            <div class="item">
+                <img src="~/Content/Shared/images/BG_Slider/1_Mod.jpg" alt="Slide3" />
+            </div>
+        </div>
+
+        <div class="pull-center">
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+         <i class="glyphicon glyphicon-chevron-left"></i>
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+         <i class="glyphicon glyphicon-chevron-right"></i>
+        </a>
+            </div>
+    </div>
+</div>
+
+        </div>
+
+    <div class="navbar navbar-fixed-top navbar-custom">
+        <div class="container">
+
+            <div class="navbar-header">
+
+                <a href="#" class="pull-left">
+                    <img src="~/Content/Shared/images/logo.png"></a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="#section1">Home</a>
+                    </li>
+                    <li><a href="#section2">Services</a>
+                    </li>
+                    <li><a href="#section3">Explore</a>
+                    </li>
+                    <li><a href="#section4">Contact</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle login_class" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> My Profile <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Account/EditUserProfile">Edit Profile</a></li>
+                            <li><a href="~/Database/Index">My Panel</a></li>                            
+                             <li><a href="~/Messaging/Inbox">Inbox</a></li>
+                            <li><a href="~/Messaging/Outbox">Outbox</a></li>
+                            <li><a href="~/Account/Logout">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="group">
+    </div>
+
+
+    <div id="section2">
+
+        <div class="database-room">
+
+            <h1> Services That Will Aid Your Request! </h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <img class="roommate" src="~/Content/Shared/images/Column/roommates3.png">
+
+                                <h5>Looking for a roommate? or any replacement at your place? </br> Enter in to a database and raise a request!</h5>
+                                <a href="../Database/Index" class="button">Roommate Finder</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-body ">
+                                <img class="roommate" src="~/Content/Shared/images/Column/sale1.png">
+
+                                <h5>Want to Sell or Buy any household or day-to day life items? </br> Enter in to a database and raise a request! </h5>
+                                <a href="#" class="button">Sell and Buy Database</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="section3">
+    <div class="middle-layer">
+
+        <h1> Things You Will Like To Explore! </h1>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">
+                    <div class="box-c">
+                        <a href="#">
+                            <img class="home" src="~/Content/Shared/images/MiddleLayer/home/home5.png">
+                            <p class="text">APARTMENTS</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">
+                    <a href="#">
+                        <div class="box-c">
+                            <img class="car" src="~/Content/Shared/images/MiddleLayer/car/car1.png">
+                            <p class="text">TRANSPORTATION</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">
+                    <a href="#">
+                        <div class="box-c">
+                            <img class="food" src="~/Content/Shared/images/MiddleLayer/Food/food3_ondark.png">
+                            <p class="text">FOOD OUTLETS</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">
+                    <a href="#">
+                        <div class="box-c">
+                            <img class="places" src="~/Content/Shared/images/MiddleLayer/places/place2.png">
+                            <p class="text">PLACES TO VISIT</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">
+                    <a href="#">
+                        <div class="box-c">
+                            <img class="other" src="~/Content/Shared/images/MiddleLayer/soon/gear2.png">
+                            <p class="text">OTHER NEEDS</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">
+                    <a href="#">
+                        <div class="box-c">
+                            <img class="soon" src="~/Content/Shared/images/MiddleLayer/other.png">
+                            <p class="text">COMING SOON</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+            </div>
+
+    <div id="section4">
+        <h1> We Will Love To Read Your Feedback! </h1>
+    <div class="email-area">
+        <div class="signup-page">
+            <div class="signup-form">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h3 class="email-header">Send Your Message</h3>
+                            @RenderBody()
+                        </div>
+                        <div class="col-sm-6">
+                            <h3 class="email-header">Get Directions</h3>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52992.51040969516!2d-117.95972661407455!3d33.888829747668694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd2a74c381cb63%3A0xf59c53811e60ea4a!2sFullerton%2C+CA!5e0!3m2!1sen!2sus!4v1462016830410"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            </div>
+
+
+    <footer class=" footer group">
+        <p>FULLERTONXPLORER &copy; 2016 </p>
+    </footer>
+
+
+</body>
+</html>
+
+
+

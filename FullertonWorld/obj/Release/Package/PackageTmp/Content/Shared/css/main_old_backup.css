@@ -1,0 +1,327 @@
+
+html
+{
+   background-color: #009999;
+}
+
+
+
+body
+{
+    font-family: sans-serif;
+    font-size: 90%;
+}
+
+header
+{
+    
+}
+
+header h1
+{
+    color: azure;
+    text-align: left;
+    font-family: sans-serif;
+    color: #009999;
+    font-weight: 100;
+    margin: 0;
+    padding: 10px 10px 3px 0px; 
+}
+
+header p
+{
+    font-family: sans-serif;
+    font-size: 1.2em;
+    color: beige;
+    text-align: left;
+    color: #009999;
+    font-weight: 100;
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+.container
+{
+    background-color: white; 
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+.content-area
+{    
+    border-top: 2px solid;
+    border-top-color: #009999;
+    border-bottom: 2px solid;
+    border-bottom-color: #009999;
+}
+
+
+
+.sidebar-left
+{
+    width: 23%;
+    float: left;
+    background-color: white;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 20px 20px 20px;
+    box-sizing: border-box;
+}
+
+.head-top
+{
+    
+}
+
+.main-area
+{
+    width: 51.5%;
+    float: left;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 20px 20px 20px;
+    box-sizing: border-box;
+}
+
+.sidebar-right
+{
+    width: 22%;
+    float: right;
+    background-color: lightgray;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding: 20px 20px 20px 20px;
+    box-sizing: border-box;
+}
+
+
+
+img 
+{
+    width: 562px;
+    height: auto;
+}
+
+.image-banner img
+{
+    display:block;
+}
+
+.banner-description
+{
+    position: absolute;
+    bottom: 0px;
+    color: #FFF;
+    background-color: rgba(0,0,0,0.7);
+    padding: 8px 16px;
+}
+
+.image-banner
+{
+    position: relative;
+    margin-bottom: 15px;
+}
+
+
+.group:before,
+.group:after
+{
+    content: "";
+    display: table;
+}
+
+table th
+{
+    text-align: left;
+    background-color: darkgray;
+    color: #FFF;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+}
+
+table th, table td
+{
+    border: 1px solid gray;
+    padding: 7px;
+}
+
+table
+{
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table tbody tr:nth-child(even) td
+{
+    background-color: beige; 
+}
+
+.col-feature
+{
+    width: 30%;
+}
+
+.col-details
+{
+    width: 70%;
+}
+
+/* to center the 2nd column */
+/*
+table td:nth-child(2),
+table thead th:nth-child(2)
+{
+    text-align: center;
+}
+*/
+
+
+.group:after
+{
+    clear: both;
+}
+
+.group
+{
+    zoom: 1;
+}
+
+footer
+{
+    color: darkgray;
+    font-size: 85%;
+    text-align: center;
+}
+
+
+/* navigation bar start */
+.site-nav li
+{
+    list-style: none; /* This will remove the bullets of Unordered Nav List (ul)*/
+    margin-left:7px;
+    float: right;
+}
+
+.site-nav ul
+{
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav
+{
+    margin-bottom: 0px;
+    
+}
+
+.site-nav a
+{
+    
+    text-decoration: none;  /* removes the underline */
+    color: #009999; 
+    display: block; /* bydefault is inline */
+    padding: 10px 20px;
+    border: 2px solid;
+    border-color: #009999;
+    border-bottom: 0px;
+
+}
+
+.site-nav a:hover
+{
+    background-color: lightgray;
+}
+
+/* navigation bar ends*/
+
+
+/* for Log In page*/
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+select
+{
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 0 10px;
+    height: 40px;
+    font-family: Tahoma, sans-serif;
+    font-size: 100%;
+    margin-bottom: 15px;
+    border: 1px solid #CDCDCD;
+    outline: none; /* To remove bydefault blue focus color of text and button outline*/
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus
+{
+    border: 1px solid darkcyan;
+    box-shadow: inset 2px 2px 2px rgba(0,0,0,0.15);
+}
+
+input[type="submit"]
+{
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    background-color: darkcyan;
+    color: aliceblue;
+    padding: 10px 0;
+    border: 1px solid green;
+    border-radius: 3px;
+    font-family: Tahoma, sans-serif;
+    font-size: 100%;
+    margin-bottom: 10px;
+    outline: none; /* To remove bydefault blue focus color of text and button outline*/
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus
+{
+    background-color: darkgreen;
+}
+
+.checkbox-text
+{
+    font-size: 85%;
+    color: #777;
+}
+
+form
+{
+    background-color: #ECECEC;
+    padding: 30px 40px;
+}
+
+.hidden-label
+{
+    position: absolute;
+    height: 0;
+    widows: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.login-background
+{
+    background-color: #c2bbb1;
+    
+}
+
+.login-background
+{
+    background-color: burlywood;
+}

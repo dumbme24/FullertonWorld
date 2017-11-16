@@ -1,0 +1,111 @@
+﻿@model RegistrationLogin.Models.SecondUserSendMessage
+
+<link href="~/Content/Shared/css/views.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "ContactBuySellRequester";
+    Layout = "~/Content/Shared/_LayoutDatabase.cshtml";
+}
+
+<h2>Contact Requester</h2>
+
+                       <button type="button" class="btn btn-info btn-xs"  onclick="location.href='@Url.Action("sellbuygrid", "Database")'">Back to Available Requests</button>
+
+
+@using (Html.BeginForm("ContactBuySellRequester", "Database", FormMethod.Post))
+ {
+        @Html.ValidationSummary(true)
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+        <div class="display-label">
+            <h4>@Html.DisplayNameFor(model => model.buySellDB.Name)</h4>
+        </div>
+        <div class="display-field">
+      <h3> @Html.DisplayFor(model => model.buySellDB.Name) </h3>
+        </div> 
+
+        <div class="display-label">
+            <h4>@Html.DisplayNameFor(model => model.buySellDB.BuyOrSell) </h4>
+        </div>
+        <div class="display-field">
+          <h3>  @Html.DisplayFor(model => model.buySellDB.BuyOrSell) </h3>
+        </div>
+        <div class="display-label">
+            <h4>@Html.DisplayNameFor(model => model.buySellDB.Item) </h4>
+        </div>
+        <div class="display-field">
+        <h3>   @Html.DisplayFor(model => model.buySellDB.Item) </h3> 
+        </div>
+
+        <div class="display-label">
+            <h4>@Html.DisplayNameFor(model => model.buySellDB.Price)</h4>
+        </div>
+        <div class="display-field">
+        <h3>   @Html.DisplayFor(model => model.buySellDB.Price) </h3> 
+        </div>
+
+        <div class="display-label">
+            <h4>@Html.DisplayNameFor(model => model.buySellDB.Requested_Date) </h4>
+        </div>
+        <div class="display-field">
+         <h3>   @Html.DisplayFor(model => model.buySellDB.Requested_Date) </h3>
+        </div>
+
+
+         @Html.HiddenFor(model => model.buySellDB.ID)
+         @Html.HiddenFor(model => model.buySellDB.UserID)
+
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+          <div class="display-label">
+            <h4>@Html.DisplayNameFor(model => model.buySellDB.MessageMail) </h4>
+        </div>
+
+        <div class="display-field">
+        <h3>   @Html.DisplayFor(m => m.buySellDB.MessageMail) </h3>
+        </div>
+        <br />
+
+        @if (ViewBag.MessageReq != null)
+            {
+            <h4 style="font-family:Cambria; color:green;font-size:18px; padding-left:20px;">@ViewBag.MessageReq</h4>
+            }
+
+            <div class="form-group">
+                <div class="col-md-10">
+                     @Html.TextAreaFor(m => m.sendMessage.MessageToRequester, new { @class = "form-control", @Rows = "6", Type="text", required="required", @placeholder = "Your Message"})
+                    @Html.ValidationMessageFor(m => m.sendMessage.MessageToRequester)
+                </div>
+                </div>
+                <div class="form-group">
+                <div class="col-md-10">
+                    @Html.HiddenFor(m => m.buySellDB.UserID, new { @class = "form-control"})
+                    @Html.ValidationMessageFor(m => m.sendMessage.MessageToRequester)
+                </div>
+                </div>
+
+                <div class="form-group">
+                <div class="col-md-10">
+                    @Html.HiddenFor(m => m.buySellDB.ID, new { @class = "form-control"})
+                    @Html.ValidationMessageFor(m => m.sendMessage.MessageToRequester)
+                </div>
+                 </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="submit" class="btn btn-inverse" value="Send Message" />
+                </div>            
+             </div>
+</div>
+  </div>
+}
+
+<hr />
+<p>
+
+    @Html.ActionLink("Back to Available Requests", "sellbuygrid")
+</p>
+
